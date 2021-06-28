@@ -1,14 +1,13 @@
-function currentDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
-  let day = date.getDay();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
   let days = [
     "Sunday",
     "Monday",
@@ -17,15 +16,23 @@ function currentDate(date) {
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
-  return `${days[day]}, ${hours}:${minutes}`;
+  let day = days[date.getDay()];
+
+  return `${day} ${hours}:${minutes}`;
 }
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function search(event) {
@@ -37,10 +44,6 @@ function search(event) {
 
   axios.get(apiUrl).then(displayWeatherCondition);
 }
-
-let dateElement = document.querySelector("#date");
-let now = new Date();
-dateElement.innerHTML = currentDate(now);
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);

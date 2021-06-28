@@ -10,71 +10,89 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <link rel="stylesheet" href="src/style.css">
-   <title>WeatherApp</title>
-</head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>WeatherApp</title>
+  </head>
   <body>
     <div class="container">
+      <div class="weather-app-wrapper">
         <div class="card" style="width: 24rem">
-        <img src="images/weather.svg" class="card-img-top" alt="weather" />
-        <div class="card-body">
-          <p class="card-text">
+          <img src="images/weather.svg" class="card-img-top" alt="weather" />
+          <div class="card-body">
+            <p class="card-text"></p>
 
             <form class="search-form" id="search-form">
-          <div class="row">
-            <div class="col-6">
-              <input
-                type="search"
-                placeholder="Your city"
-                autofocus="on"
-                autocomplete="off"
-                id="city-input"
-                
-              />
+              <div class="row">
+                <div class="col-6">
+                  <input
+                    type="search"
+                    placeholder="Your city"
+                    autofocus="on"
+                    autocomplete="off"
+                    id="city-input"
+                  />
+                </div>
+
+                <div class="col-6">
+                  <input type="submit" value="Search" />
+                </div>
+              </div>
+            </form>
+</br>
+            <h1 id="city">Your city</h1>
+            <h5 id="date">Date</h5>
+
+            <div class="api">
+              <div class="row">
+                <div class="col-6">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    alt="sun"
+                  />
+                  <strong id="temperature">13</strong>
+                  <span class="units">C°|<a href="#">F°</a></span>
+                </div>
+                <div class="col-6">
+                  <ul>
+                    
+                    <li >Humidity: <span id="humidity"></span> %</li>
+                    <li>Wind: <span id="wind"></span> km/h</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="col-6">
-              <input
-                type="submit"
-                value="Search"
-                
-              />
+            <br />
+            <br />
+            <br />
+
+            <div class="container">
+              <div class="row">
+                <div class="col">Sat 16° 🌦</div>
+                <div class="col">Sun 17° 🌧</div>
+                <div class="col">Mon 17° 🌧</div>
+                <div class="col">Tue 15° 🌧</div>
+                <div class="col">Wed 14° 🌧</div>
+              </div>
             </div>
           </div>
-        </form>
-
-     <h1 id= "city" >Gdańsk</h1>
-      <h2 id= "date" >😎</h2>
-      <div>
-      <span id= "temperature">13° 🌤</span> 
-     <span class= "units">
-       <a href="#" id="celsius-link">°C</a>
-       </span>
-      </div>
-    
-      <br />
-      <br />
-      <br />
-   
-       
-      <div class="container">
-        <div class="row">
-          <div class="col">Sat 16° 🌦</div>
-          <div class="col">Sun 17° 🌧</div>
-          <div class="col">Mon 17° 🌧</div>
-          <div class="col">Tue 15° 🌧</div>
-          <div class="col">Wed 14° 🌧</div>
         </div>
+        <small>
+          <a
+            href="https://github.com/AnnaZietarska/my-weather-app-git"
+            target="_blank"
+          >
+            Open-source code </a
+          >by Anna Ziętarska </small>
+        
       </div>
-         </p>
-        </div>
-      </div>
-      <samll><a href="https://github.com/AnnaZietarska/my-weather-app-git"
-        target ="_blank">
-        Open-source code</a>by Anna Ziętarska</samll>
     </div>
-    <script src= "src/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
