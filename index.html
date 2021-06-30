@@ -47,22 +47,30 @@
             </form>
 </br>
             <h1 id="city">Your city</h1>
-            <h5 id="date">Date</h5>
+            <ul><li id="date">Date</li>
+              <li>
+                Clear
+              </li>
+            </ul>
+            
 
             <div class="api">
               <div class="row">
-                <div class="col-6">
+                <div class="col-7">
                   <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    src=""
                     alt="sun"
+                    id="icon"
                   />
                   <strong id="temperature">13</strong>
-                  <span class="units">C°|<a href="#">F°</a></span>
+                  <span class="units">
+                    <a href="#" id="celsius-link" class="active">C°| </a>
+                 <a href="#" id="fahrenheit-link" class="active">F°</a></span>
                 </div>
-                <div class="col-6">
+                <div class="col-5">
                   <ul>
                     
-                    <li >Humidity: <span id="humidity"></span> %</li>
+                    <li >Humidity: <span id="humidity"></span>%</li>
                     <li>Wind: <span id="wind"></span> km/h</li>
                   </ul>
                 </div>
