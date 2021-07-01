@@ -24,7 +24,6 @@ function formatDate(timestamp) {
 
 function displayWeatherCondition(response) {
   celsiusTemperature = response.data.main.temp;
-
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML =
     Math.round(celsiusTemperature);
@@ -52,9 +51,6 @@ function search(event) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
-
 function displayFahrenhietTemperature(event) {
   event.preventDefault();
   let fahrenheitTemperture = (celsiusTemperature * 9) / 5 + 32;
@@ -63,9 +59,9 @@ function displayFahrenhietTemperature(event) {
 }
 
 function displayCelsiusTemperature(event) {
-  event.preventDefaut();
+  event.preventDefault();
   let temperatureElemenet = document.querySelector("#temperature");
-  temperatureElemenet.innerHTML = celsiusTemperature;
+  temperatureElemenet.innerHTML = Math.round(celsiusTemperature);
 }
 let celsiusTemperature = null;
 
@@ -74,3 +70,6 @@ fahrenheitLink.addEventListener("click", displayFahrenhietTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", search);
