@@ -44,3 +44,6 @@ strong {
   cursor: default;
   text-decoration: none;
 }
+.temperature-min {
+  color: darkgrey;
+}
