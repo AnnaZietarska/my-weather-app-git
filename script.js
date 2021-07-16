@@ -98,25 +98,5 @@ function search(event) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-function displayFahrenhietTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemperture = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElemenet = document.querySelector("#temperature");
-  temperatureElemenet.innerHTML = Math.round(fahrenheitTemperture);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElemenet = document.querySelector("#temperature");
-  temperatureElemenet.innerHTML = Math.round(celsiusTemperature);
-}
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenhietTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
